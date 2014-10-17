@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F42188519EFAA25003C654B /* ColorPickViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F42188419EFAA25003C654B /* ColorPickViewController.mm */; };
+		5F42188819EFAD1E003C654B /* PlaySongView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F42188719EFAD1E003C654B /* PlaySongView.m */; };
+		5F42188B19EFBA95003C654B /* ColorPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F42188A19EFBA95003C654B /* ColorPickView.m */; };
+		5F42188D19EFDB85003C654B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F42188C19EFDB85003C654B /* AVFoundation.framework */; };
+		5F42189B19EFF493003C654B /* breaker.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F42189719EFF493003C654B /* breaker.mp3 */; };
+		5F42189C19EFF493003C654B /* hareruya.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F42189819EFF493003C654B /* hareruya.mp3 */; };
+		5F42189D19EFF493003C654B /* intherain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F42189919EFF493003C654B /* intherain.mp3 */; };
+		5F42189E19EFF493003C654B /* loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F42189A19EFF493003C654B /* loop.mp3 */; };
 		5F50A62419EFA087002E6BF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62319EFA087002E6BF4 /* Foundation.framework */; };
 		5F50A62619EFA087002E6BF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62519EFA087002E6BF4 /* CoreGraphics.framework */; };
 		5F50A62819EFA087002E6BF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62719EFA087002E6BF4 /* UIKit.framework */; };
@@ -14,7 +22,7 @@
 		5F50A63019EFA087002E6BF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F50A62F19EFA087002E6BF4 /* main.m */; };
 		5F50A63419EFA087002E6BF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F50A63319EFA087002E6BF4 /* AppDelegate.m */; };
 		5F50A63719EFA087002E6BF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F50A63519EFA087002E6BF4 /* Main.storyboard */; };
-		5F50A63A19EFA087002E6BF4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F50A63919EFA087002E6BF4 /* ViewController.m */; };
+		5F50A63A19EFA087002E6BF4 /* FisrtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F50A63919EFA087002E6BF4 /* FisrtViewController.m */; };
 		5F50A63C19EFA087002E6BF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F50A63B19EFA087002E6BF4 /* Images.xcassets */; };
 		5F50A64319EFA087002E6BF4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A64219EFA087002E6BF4 /* XCTest.framework */; };
 		5F50A64419EFA087002E6BF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62319EFA087002E6BF4 /* Foundation.framework */; };
@@ -32,6 +40,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F42188319EFAA25003C654B /* ColorPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickViewController.h; sourceTree = "<group>"; };
+		5F42188419EFAA25003C654B /* ColorPickViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ColorPickViewController.mm; sourceTree = "<group>"; };
+		5F42188619EFAD1E003C654B /* PlaySongView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaySongView.h; path = ../PlaySongView.h; sourceTree = "<group>"; };
+		5F42188719EFAD1E003C654B /* PlaySongView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaySongView.m; path = ../PlaySongView.m; sourceTree = "<group>"; };
+		5F42188919EFBA95003C654B /* ColorPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickView.h; sourceTree = "<group>"; };
+		5F42188A19EFBA95003C654B /* ColorPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickView.m; sourceTree = "<group>"; };
+		5F42188C19EFDB85003C654B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5F42189719EFF493003C654B /* breaker.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breaker.mp3; sourceTree = "<group>"; };
+		5F42189819EFF493003C654B /* hareruya.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hareruya.mp3; sourceTree = "<group>"; };
+		5F42189919EFF493003C654B /* intherain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = intherain.mp3; sourceTree = "<group>"; };
+		5F42189A19EFF493003C654B /* loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loop.mp3; sourceTree = "<group>"; };
 		5F50A62019EFA087002E6BF4 /* Soraiao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soraiao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F50A62319EFA087002E6BF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5F50A62519EFA087002E6BF4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -43,8 +62,8 @@
 		5F50A63219EFA087002E6BF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5F50A63319EFA087002E6BF4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5F50A63619EFA087002E6BF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5F50A63819EFA087002E6BF4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5F50A63919EFA087002E6BF4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5F50A63819EFA087002E6BF4 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		5F50A63919EFA087002E6BF4 /* FisrtViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FisrtViewController.m; sourceTree = "<group>"; };
 		5F50A63B19EFA087002E6BF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F50A64119EFA087002E6BF4 /* SoraiaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoraiaoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F50A64219EFA087002E6BF4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -55,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F42188D19EFDB85003C654B /* AVFoundation.framework in Frameworks */,
 				5F50A62619EFA087002E6BF4 /* CoreGraphics.framework in Frameworks */,
 				5F50A62819EFA087002E6BF4 /* UIKit.framework in Frameworks */,
 				5F50A62419EFA087002E6BF4 /* Foundation.framework in Frameworks */,
@@ -74,6 +94,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F42188E19EFDB8F003C654B /* mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				5F42189719EFF493003C654B /* breaker.mp3 */,
+				5F42189819EFF493003C654B /* hareruya.mp3 */,
+				5F42189919EFF493003C654B /* intherain.mp3 */,
+				5F42189A19EFF493003C654B /* loop.mp3 */,
+			);
+			name = mp3;
+			sourceTree = "<group>";
+		};
 		5F50A61719EFA087002E6BF4 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +126,7 @@
 		5F50A62219EFA087002E6BF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F42188C19EFDB85003C654B /* AVFoundation.framework */,
 				5F50A62319EFA087002E6BF4 /* Foundation.framework */,
 				5F50A62519EFA087002E6BF4 /* CoreGraphics.framework */,
 				5F50A62719EFA087002E6BF4 /* UIKit.framework */,
@@ -106,11 +138,18 @@
 		5F50A62919EFA087002E6BF4 /* Soraiao */ = {
 			isa = PBXGroup;
 			children = (
+				5F42188E19EFDB8F003C654B /* mp3 */,
 				5F50A63219EFA087002E6BF4 /* AppDelegate.h */,
 				5F50A63319EFA087002E6BF4 /* AppDelegate.m */,
 				5F50A63519EFA087002E6BF4 /* Main.storyboard */,
-				5F50A63819EFA087002E6BF4 /* ViewController.h */,
-				5F50A63919EFA087002E6BF4 /* ViewController.m */,
+				5F50A63819EFA087002E6BF4 /* FirstViewController.h */,
+				5F50A63919EFA087002E6BF4 /* FisrtViewController.m */,
+				5F42188919EFBA95003C654B /* ColorPickView.h */,
+				5F42188A19EFBA95003C654B /* ColorPickView.m */,
+				5F42188319EFAA25003C654B /* ColorPickViewController.h */,
+				5F42188419EFAA25003C654B /* ColorPickViewController.mm */,
+				5F42188619EFAD1E003C654B /* PlaySongView.h */,
+				5F42188719EFAD1E003C654B /* PlaySongView.m */,
 				5F50A63B19EFA087002E6BF4 /* Images.xcassets */,
 				5F50A62A19EFA087002E6BF4 /* Supporting Files */,
 			);
@@ -175,6 +214,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = echo;
 				TargetAttributes = {
+					5F50A61F19EFA087002E6BF4 = {
+						DevelopmentTeam = EPL34TB24H;
+					};
 					5F50A64019EFA087002E6BF4 = {
 						TestTargetID = 5F50A61F19EFA087002E6BF4;
 					};
@@ -205,8 +247,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F50A63C19EFA087002E6BF4 /* Images.xcassets in Resources */,
+				5F42189D19EFF493003C654B /* intherain.mp3 in Resources */,
+				5F42189B19EFF493003C654B /* breaker.mp3 in Resources */,
+				5F42189E19EFF493003C654B /* loop.mp3 in Resources */,
 				5F50A62E19EFA087002E6BF4 /* InfoPlist.strings in Resources */,
 				5F50A63719EFA087002E6BF4 /* Main.storyboard in Resources */,
+				5F42189C19EFF493003C654B /* hareruya.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F50A63A19EFA087002E6BF4 /* ViewController.m in Sources */,
+				5F50A63A19EFA087002E6BF4 /* FisrtViewController.m in Sources */,
+				5F42188B19EFBA95003C654B /* ColorPickView.m in Sources */,
+				5F42188519EFAA25003C654B /* ColorPickViewController.mm in Sources */,
 				5F50A63419EFA087002E6BF4 /* AppDelegate.m in Sources */,
+				5F42188819EFAD1E003C654B /* PlaySongView.m in Sources */,
 				5F50A63019EFA087002E6BF4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,10 +391,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Soraiao/Soraiao-Prefix.pch";
 				INFOPLIST_FILE = "Soraiao/Soraiao-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -355,10 +407,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Soraiao/Soraiao-Prefix.pch";
 				INFOPLIST_FILE = "Soraiao/Soraiao-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -422,6 +477,7 @@
 				5F50A65419EFA087002E6BF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F50A65519EFA087002E6BF4 /* Build configuration list for PBXNativeTarget "SoraiaoTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +486,7 @@
 				5F50A65719EFA087002E6BF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
+#import "ColorPickViewController.h"
+@interface FirstViewController : UIViewController
+{
+    UIImageView* backgroundImageView;
+    UIButton* startButton;
+    UIButton* linkButton;
+    ColorPickViewController* pickerViewController;
+}
+-(void)startButtonPressed;
+-(void)linkButtonPressed;
 @end

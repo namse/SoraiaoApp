@@ -118,7 +118,7 @@ xcuserdata
 # and should therefore not be checked into the VCS.
  
 *.xccheckout
- 
+*.ipa 
 ####
 # UNKNOWN: recommended by others, but I can't discover what these files are
 #
