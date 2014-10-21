@@ -45,7 +45,7 @@
 //        [pickButton addTarget:parent action:@selector(pickButtonPressed) forControlEvents:UIControlEventTouchDown];
 //        [self addSubview:pickButton];
         
-        UIImage* back = [UIImage imageNamed:@"pick"];
+        UIImage* back = [UIImage imageNamed:@"back"];
         backButton = [[UIButton alloc]initWithFrame:CGRectMake((backgroundTopImageView.frame.size.height - back.size.height)/2.f,
                                                                (backgroundTopImageView.frame.size.height - back.size.height)/2.f, back.size.width, back.size.height)];
         [backButton setImage:back forState:UIControlStateNormal];
@@ -56,7 +56,7 @@
         UIImage* bottomImage = [UIImage imageNamed:@"PlaySongViewBackgroundBottom"];
         backgroundBottomButton = [[UIButton alloc]initWithFrame:CGRectMake(0.f, frame.size.height - bottomImage.size.height, bottomImage.size.width, bottomImage.size.height)];
         [backgroundBottomButton setImage:bottomImage forState:UIControlStateNormal];
-        [backgroundBottomButton addTarget:self action:@selector(onPlayToggleButtonPressed) forControlEvents:UIControlEventTouchDown];
+        [backgroundBottomButton addTarget:self action:@selector(linkButtonPressed) forControlEvents:UIControlEventTouchDown];
         [self addSubview:backgroundBottomButton];
         
         backgroundImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"PlaySongViewBackground"]];
@@ -72,7 +72,7 @@
         playToggleButton = [[UIButton alloc]initWithFrame:newFrame];
         [playToggleButton setImage:playIcon forState:UIControlStateNormal];
         [self addSubview:playToggleButton];
-        [playToggleButton addTarget:self action:@selector(onPlayToggleButtonPressed) forControlEvents:UIControlEventTouchDown];
+        [playToggleButton addTarget:self action:@selector(linkButtonPressed) forControlEvents:UIControlEventTouchDown];
         
         UIImage* title = [UIImage imageNamed:@"SongTitleBreaker"];
         float factor = title.size.height / (58.f / 2.f);
