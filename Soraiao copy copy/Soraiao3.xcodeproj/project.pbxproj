@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F42188519EFAA25003C654B /* ColorPickViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F42188419EFAA25003C654B /* ColorPickViewController.mm */; };
+		5F42188819EFAD1E003C654B /* PlaySongView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F42188719EFAD1E003C654B /* PlaySongView.m */; };
+		5F42188B19EFBA95003C654B /* ColorPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F42188A19EFBA95003C654B /* ColorPickView.m */; };
+		5F42188D19EFDB85003C654B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F42188C19EFDB85003C654B /* AVFoundation.framework */; };
+		5F42189B19EFF493003C654B /* breaker.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F42189719EFF493003C654B /* breaker.mp3 */; };
+		5F42189C19EFF493003C654B /* hareruya.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F42189819EFF493003C654B /* hareruya.mp3 */; };
+		5F42189D19EFF493003C654B /* intherain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F42189919EFF493003C654B /* intherain.mp3 */; };
+		5F42189E19EFF493003C654B /* loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5F42189A19EFF493003C654B /* loop.mp3 */; };
+		5F50A62419EFA087002E6BF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62319EFA087002E6BF4 /* Foundation.framework */; };
+		5F50A62619EFA087002E6BF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62519EFA087002E6BF4 /* CoreGraphics.framework */; };
+		5F50A62819EFA087002E6BF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62719EFA087002E6BF4 /* UIKit.framework */; };
+		5F50A62E19EFA087002E6BF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F50A62C19EFA087002E6BF4 /* InfoPlist.strings */; };
+		5F50A63019EFA087002E6BF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F50A62F19EFA087002E6BF4 /* main.m */; };
+		5F50A63419EFA087002E6BF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F50A63319EFA087002E6BF4 /* AppDelegate.m */; };
+		5F50A63719EFA087002E6BF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F50A63519EFA087002E6BF4 /* Main.storyboard */; };
+		5F50A63A19EFA087002E6BF4 /* FisrtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F50A63919EFA087002E6BF4 /* FisrtViewController.m */; };
+		5F50A63C19EFA087002E6BF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F50A63B19EFA087002E6BF4 /* Images.xcassets */; };
+		5F50A64319EFA087002E6BF4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A64219EFA087002E6BF4 /* XCTest.framework */; };
+		5F50A64419EFA087002E6BF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62319EFA087002E6BF4 /* Foundation.framework */; };
+		5F50A64519EFA087002E6BF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62719EFA087002E6BF4 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F50A64619EFA087002E6BF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F50A61819EFA087002E6BF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F50A61F19EFA087002E6BF4;
+			remoteInfo = Soraiao;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5F42188319EFAA25003C654B /* ColorPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickViewController.h; sourceTree = "<group>"; };
+		5F42188419EFAA25003C654B /* ColorPickViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ColorPickViewController.mm; sourceTree = "<group>"; };
+		5F42188619EFAD1E003C654B /* PlaySongView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaySongView.h; path = ../PlaySongView.h; sourceTree = "<group>"; };
+		5F42188719EFAD1E003C654B /* PlaySongView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaySongView.m; path = ../PlaySongView.m; sourceTree = "<group>"; };
+		5F42188919EFBA95003C654B /* ColorPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickView.h; sourceTree = "<group>"; };
+		5F42188A19EFBA95003C654B /* ColorPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickView.m; sourceTree = "<group>"; };
+		5F42188C19EFDB85003C654B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5F42189719EFF493003C654B /* breaker.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breaker.mp3; sourceTree = "<group>"; };
+		5F42189819EFF493003C654B /* hareruya.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hareruya.mp3; sourceTree = "<group>"; };
+		5F42189919EFF493003C654B /* intherain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = intherain.mp3; sourceTree = "<group>"; };
+		5F42189A19EFF493003C654B /* loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loop.mp3; sourceTree = "<group>"; };
+		5F50A62019EFA087002E6BF4 /* Soraiao3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soraiao3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F50A62319EFA087002E6BF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5F50A62519EFA087002E6BF4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5F50A62719EFA087002E6BF4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5F50A62B19EFA087002E6BF4 /* Soraiao3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Soraiao3-Info.plist"; sourceTree = "<group>"; };
+		5F50A62D19EFA087002E6BF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5F50A62F19EFA087002E6BF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5F50A63119EFA087002E6BF4 /* Soraiao3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Soraiao3-Prefix.pch"; sourceTree = "<group>"; };
+		5F50A63219EFA087002E6BF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5F50A63319EFA087002E6BF4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5F50A63619EFA087002E6BF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F50A63819EFA087002E6BF4 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		5F50A63919EFA087002E6BF4 /* FisrtViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FisrtViewController.m; sourceTree = "<group>"; };
+		5F50A63B19EFA087002E6BF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5F50A64119EFA087002E6BF4 /* Soraiao3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Soraiao3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F50A64219EFA087002E6BF4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F50A61D19EFA087002E6BF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F42188D19EFDB85003C654B /* AVFoundation.framework in Frameworks */,
+				5F50A62619EFA087002E6BF4 /* CoreGraphics.framework in Frameworks */,
+				5F50A62819EFA087002E6BF4 /* UIKit.framework in Frameworks */,
+				5F50A62419EFA087002E6BF4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F50A63E19EFA087002E6BF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F50A64319EFA087002E6BF4 /* XCTest.framework in Frameworks */,
+				5F50A64519EFA087002E6BF4 /* UIKit.framework in Frameworks */,
+				5F50A64419EFA087002E6BF4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F42188E19EFDB8F003C654B /* mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				5F42189719EFF493003C654B /* breaker.mp3 */,
+				5F42189819EFF493003C654B /* hareruya.mp3 */,
+				5F42189919EFF493003C654B /* intherain.mp3 */,
+				5F42189A19EFF493003C654B /* loop.mp3 */,
+			);
+			name = mp3;
+			sourceTree = "<group>";
+		};
+		5F50A61719EFA087002E6BF4 = {
+			isa = PBXGroup;
+			children = (
+				5F50A62919EFA087002E6BF4 /* Soraiao */,
+				5F50A62219EFA087002E6BF4 /* Frameworks */,
+				5F50A62119EFA087002E6BF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F50A62119EFA087002E6BF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F50A62019EFA087002E6BF4 /* Soraiao3.app */,
+				5F50A64119EFA087002E6BF4 /* Soraiao3Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F50A62219EFA087002E6BF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F42188C19EFDB85003C654B /* AVFoundation.framework */,
+				5F50A62319EFA087002E6BF4 /* Foundation.framework */,
+				5F50A62519EFA087002E6BF4 /* CoreGraphics.framework */,
+				5F50A62719EFA087002E6BF4 /* UIKit.framework */,
+				5F50A64219EFA087002E6BF4 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F50A62919EFA087002E6BF4 /* Soraiao */ = {
+			isa = PBXGroup;
+			children = (
+				5F42188E19EFDB8F003C654B /* mp3 */,
+				5F50A63219EFA087002E6BF4 /* AppDelegate.h */,
+				5F50A63319EFA087002E6BF4 /* AppDelegate.m */,
+				5F50A63519EFA087002E6BF4 /* Main.storyboard */,
+				5F50A63819EFA087002E6BF4 /* FirstViewController.h */,
+				5F50A63919EFA087002E6BF4 /* FisrtViewController.m */,
+				5F42188919EFBA95003C654B /* ColorPickView.h */,
+				5F42188A19EFBA95003C654B /* ColorPickView.m */,
+				5F42188319EFAA25003C654B /* ColorPickViewController.h */,
+				5F42188419EFAA25003C654B /* ColorPickViewController.mm */,
+				5F42188619EFAD1E003C654B /* PlaySongView.h */,
+				5F42188719EFAD1E003C654B /* PlaySongView.m */,
+				5F50A63B19EFA087002E6BF4 /* Images.xcassets */,
+				5F50A62A19EFA087002E6BF4 /* Supporting Files */,
+			);
+			path = Soraiao;
+			sourceTree = "<group>";
+		};
+		5F50A62A19EFA087002E6BF4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F50A62B19EFA087002E6BF4 /* Soraiao3-Info.plist */,
+				5F50A62C19EFA087002E6BF4 /* InfoPlist.strings */,
+				5F50A62F19EFA087002E6BF4 /* main.m */,
+				5F50A63119EFA087002E6BF4 /* Soraiao3-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F50A61F19EFA087002E6BF4 /* Soraiao3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F50A65219EFA087002E6BF4 /* Build configuration list for PBXNativeTarget "Soraiao3" */;
+			buildPhases = (
+				5F50A61C19EFA087002E6BF4 /* Sources */,
+				5F50A61D19EFA087002E6BF4 /* Frameworks */,
+				5F50A61E19EFA087002E6BF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Soraiao3;
+			productName = Soraiao;
+			productReference = 5F50A62019EFA087002E6BF4 /* Soraiao3.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5F50A64019EFA087002E6BF4 /* Soraiao3Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F50A65519EFA087002E6BF4 /* Build configuration list for PBXNativeTarget "Soraiao3Tests" */;
+			buildPhases = (
+				5F50A63D19EFA087002E6BF4 /* Sources */,
+				5F50A63E19EFA087002E6BF4 /* Frameworks */,
+				5F50A63F19EFA087002E6BF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F50A64719EFA087002E6BF4 /* PBXTargetDependency */,
+			);
+			name = Soraiao3Tests;
+			productName = SoraiaoTests;
+			productReference = 5F50A64119EFA087002E6BF4 /* Soraiao3Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F50A61819EFA087002E6BF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = echo;
+				TargetAttributes = {
+					5F50A61F19EFA087002E6BF4 = {
+						DevelopmentTeam = EPL34TB24H;
+					};
+					5F50A64019EFA087002E6BF4 = {
+						TestTargetID = 5F50A61F19EFA087002E6BF4;
+					};
+				};
+			};
+			buildConfigurationList = 5F50A61B19EFA087002E6BF4 /* Build configuration list for PBXProject "Soraiao3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F50A61719EFA087002E6BF4;
+			productRefGroup = 5F50A62119EFA087002E6BF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F50A61F19EFA087002E6BF4 /* Soraiao3 */,
+				5F50A64019EFA087002E6BF4 /* Soraiao3Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F50A61E19EFA087002E6BF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F50A63C19EFA087002E6BF4 /* Images.xcassets in Resources */,
+				5F42189D19EFF493003C654B /* intherain.mp3 in Resources */,
+				5F42189B19EFF493003C654B /* breaker.mp3 in Resources */,
+				5F42189E19EFF493003C654B /* loop.mp3 in Resources */,
+				5F50A62E19EFA087002E6BF4 /* InfoPlist.strings in Resources */,
+				5F50A63719EFA087002E6BF4 /* Main.storyboard in Resources */,
+				5F42189C19EFF493003C654B /* hareruya.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F50A63F19EFA087002E6BF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F50A61C19EFA087002E6BF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F50A63A19EFA087002E6BF4 /* FisrtViewController.m in Sources */,
+				5F42188B19EFBA95003C654B /* ColorPickView.m in Sources */,
+				5F42188519EFAA25003C654B /* ColorPickViewController.mm in Sources */,
+				5F50A63419EFA087002E6BF4 /* AppDelegate.m in Sources */,
+				5F42188819EFAD1E003C654B /* PlaySongView.m in Sources */,
+				5F50A63019EFA087002E6BF4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5F50A63D19EFA087002E6BF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F50A64719EFA087002E6BF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F50A61F19EFA087002E6BF4 /* Soraiao3 */;
+			targetProxy = 5F50A64619EFA087002E6BF4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5F50A62C19EFA087002E6BF4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F50A62D19EFA087002E6BF4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5F50A63519EFA087002E6BF4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F50A63619EFA087002E6BF4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F50A65019EFA087002E6BF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5F50A65119EFA087002E6BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F50A65319EFA087002E6BF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Soraiao/Soraiao3-Prefix.pch";
+				INFOPLIST_FILE = "Soraiao/Soraiao3-Info.plist";
+				PRODUCT_NAME = Soraiao3;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5F50A65419EFA087002E6BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Soraiao/Soraiao3-Prefix.pch";
+				INFOPLIST_FILE = "Soraiao/Soraiao3-Info.plist";
+				PRODUCT_NAME = Soraiao3;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5F50A65619EFA087002E6BF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Soraiao.app/Soraiao";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Soraiao/Soraiao-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SoraiaoTests/SoraiaoTests-Info.plist";
+				PRODUCT_NAME = Soraiao3Tests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5F50A65719EFA087002E6BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Soraiao.app/Soraiao";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Soraiao/Soraiao-Prefix.pch";
+				INFOPLIST_FILE = "SoraiaoTests/SoraiaoTests-Info.plist";
+				PRODUCT_NAME = Soraiao3Tests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F50A61B19EFA087002E6BF4 /* Build configuration list for PBXProject "Soraiao3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F50A65019EFA087002E6BF4 /* Debug */,
+				5F50A65119EFA087002E6BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F50A65219EFA087002E6BF4 /* Build configuration list for PBXNativeTarget "Soraiao3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F50A65319EFA087002E6BF4 /* Debug */,
+				5F50A65419EFA087002E6BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F50A65519EFA087002E6BF4 /* Build configuration list for PBXNativeTarget "Soraiao3Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F50A65619EFA087002E6BF4 /* Debug */,
+				5F50A65719EFA087002E6BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F50A61819EFA087002E6BF4 /* Project object */;
+}
