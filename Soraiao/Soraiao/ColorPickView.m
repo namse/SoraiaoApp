@@ -23,10 +23,13 @@
         [self addSubview:backgroundTopImageView];
         
         UIImage* home = [UIImage imageNamed:@"home"];
-        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(screenRect.size.width - home.size.width - (backgroundTopImageView.frame.size.height - home.size.height)/2.f,
-                                                               (backgroundTopImageView.frame.size.height - home.size.height)/2.f,
-                                                               home.size.width,
-                                                               home.size.height)];
+        float homeChnagedWidth = home.size.width * 0.75f;
+        float homeChnagedHeight = home.size.height * 0.75f;
+        
+        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(screenRect.size.width - homeChnagedWidth - (backgroundTopImageView.frame.size.height - homeChnagedHeight)/2.f,
+                                                               (backgroundTopImageView.frame.size.height - (home.size.height * 0.5f))/2.f,
+                                                               homeChnagedWidth,
+                                                               homeChnagedHeight)];
         [homeButton setImage:home forState:UIControlStateNormal];
         [homeButton addTarget:parent action:@selector(homeButtonPressed) forControlEvents:UIControlEventTouchDown];
         [self addSubview:homeButton];

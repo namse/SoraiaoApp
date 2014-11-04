@@ -29,7 +29,30 @@
         backgroundTopImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"PlaySongViewBackgroundTop"]];
         [self addSubview:backgroundTopImageView];
         
+        UIImage* home = [UIImage imageNamed:@"home"];
         
+        float homeChnagedWidth = home.size.width * 0.75f;
+        float homeChnagedHeight = home.size.height * 0.75f;
+        
+        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(self.frame.size.width - homeChnagedWidth - (backgroundTopImageView.frame.size.height - homeChnagedHeight)/2.f,
+                                                               (backgroundTopImageView.frame.size.height - (home.size.height * 0.5f))/2.f,
+                                                               homeChnagedWidth,
+                                                               homeChnagedHeight)];
+        [homeButton setImage:home forState:UIControlStateNormal];
+        [homeButton addTarget:parent action:@selector(homeButtonPressed) forControlEvents:UIControlEventTouchDown];
+        [self addSubview:homeButton];
+        
+        UIImage* pick = [UIImage imageNamed:@"pick"];
+        float pickChnagedWidth = pick.size.width * 0.75f;
+        float pickChnagedHeight = pick.size.height * 0.75f;
+        pickButton = [[UIButton alloc]initWithFrame:CGRectMake((backgroundTopImageView.frame.size.height - pickChnagedHeight)/2.f,
+                                                               (backgroundTopImageView.frame.size.height - pick.size.height * 0.5f)/2.f,
+                                                               pickChnagedWidth,
+                                                               pickChnagedHeight)];
+        [pickButton setImage:pick forState:UIControlStateNormal];
+        [pickButton addTarget:parent action:@selector(pickButtonPressed) forControlEvents:UIControlEventTouchDown];
+        [self addSubview:pickButton];
+
 //        UIImage* home = [UIImage imageNamed:@"home"];
 //        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(frame.size.width - home.size.width - (backgroundTopImageView.frame.size.height - home.size.height)/2.f,
 //                                                               (backgroundTopImageView.frame.size.height - home.size.height)/2.f,
@@ -72,7 +95,7 @@
         playToggleButton = [[UIButton alloc]initWithFrame:newFrame];
         [playToggleButton setImage:playIcon forState:UIControlStateNormal];
         [self addSubview:playToggleButton];
-        [playToggleButton addTarget:self action:@selector(linkButtonPressed) forControlEvents:UIControlEventTouchDown];
+        [playToggleButton addTarget:self action:@selector(onPlayToggleButtonPressed) forControlEvents:UIControlEventTouchDown];
         
         UIImage* title = [UIImage imageNamed:@"SongTitleBreaker"];
         float factor = title.size.height / (58.f / 2.f);

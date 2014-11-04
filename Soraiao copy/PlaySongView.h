@@ -15,8 +15,8 @@
     UIButton* backgroundBottomButton;
     UIImageView* backgroundImageView;
     UIButton* playToggleButton;
-    //UIButton* homeButton;
-    //UIButton* pickButton;
+    UIButton* homeButton;
+    UIButton* pickButton;
     UIButton* backButton;
     UIImageView* songTitleView;
     

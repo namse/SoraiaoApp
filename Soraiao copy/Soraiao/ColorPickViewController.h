@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PlaySongView.h"
 #import "ColorPickView.h"
+#import <QuartzCore/QuartzCore.h>
 #define ANI_DUR 3.f
 #define ALP_DUR 3.f
 @interface ColorPickViewController : UIViewController
@@ -24,9 +25,9 @@
 }
 -(void)transToPlaySongWithColor:(struct Color)color;
 -(void)linkButtonPressed;
-//-(void)homeButtonPressed;
+-(void)homeButtonPressed;
 -(void)backButtonPressed;
-//-(void)pickButtonPressed;
+-(void)pickButtonPressed;
 -(void)onColorPicked;
--(void)detailButtonPressed;
+//-(void)detailButtonPressed;
 @end

@@ -18,7 +18,7 @@
     //UIImageView* backgroundBottomImageView;
     UIImageView* centerPickerImageView;
     UIButton* linkButton;
-    //UIButton* homeButton;
+    UIButton* homeButton;
     UIButton* detailButton;
     
     CGPoint centerPoint;

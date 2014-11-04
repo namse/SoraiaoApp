@@ -31,16 +31,25 @@
         
         
         UIImage* home = [UIImage imageNamed:@"home"];
-        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(frame.size.width - home.size.width - (backgroundTopImageView.frame.size.height - home.size.height)/2.f,
-                                                               (backgroundTopImageView.frame.size.height - home.size.height)/2.f,
-                                                               home.size.width, home.size.height)];
+        
+        float homeChnagedWidth = home.size.width * 0.75f;
+        float homeChnagedHeight = home.size.height * 0.75f;
+        
+        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(self.frame.size.width - homeChnagedWidth - (backgroundTopImageView.frame.size.height - homeChnagedHeight)/2.f,
+                                                               (backgroundTopImageView.frame.size.height - (home.size.height * 0.5f))/2.f,
+                                                               homeChnagedWidth,
+                                                               homeChnagedHeight)];
         [homeButton setImage:home forState:UIControlStateNormal];
         [homeButton addTarget:parent action:@selector(homeButtonPressed) forControlEvents:UIControlEventTouchDown];
         [self addSubview:homeButton];
         
         UIImage* pick = [UIImage imageNamed:@"pick"];
-        pickButton = [[UIButton alloc]initWithFrame:CGRectMake((backgroundTopImageView.frame.size.height - pick.size.height)/2.f,
-                                                               (backgroundTopImageView.frame.size.height - pick.size.height)/2.f, home.size.width, home.size.height)];
+        float pickChnagedWidth = pick.size.width * 0.75f;
+        float pickChnagedHeight = pick.size.height * 0.75f;
+        pickButton = [[UIButton alloc]initWithFrame:CGRectMake((backgroundTopImageView.frame.size.height - pickChnagedHeight)/2.f,
+                                                               (backgroundTopImageView.frame.size.height - pick.size.height * 0.5f)/2.f,
+                                                               pickChnagedWidth,
+                                                               pickChnagedHeight)];
         [pickButton setImage:pick forState:UIControlStateNormal];
         [pickButton addTarget:parent action:@selector(pickButtonPressed) forControlEvents:UIControlEventTouchDown];
         [self addSubview:pickButton];
@@ -49,7 +58,7 @@
         UIImage* bottomImage = [UIImage imageNamed:@"PlaySongViewBackgroundBottom"];
         backgroundBottomButton = [[UIButton alloc]initWithFrame:CGRectMake(0.f, frame.size.height - bottomImage.size.height, bottomImage.size.width, bottomImage.size.height)];
         [backgroundBottomButton setImage:bottomImage forState:UIControlStateNormal];
-        [backgroundBottomButton addTarget:self action:@selector(onPlayToggleButtonPressed) forControlEvents:UIControlEventTouchDown];
+        [backgroundBottomButton addTarget:self action:@selector(linkButtonPressed) forControlEvents:UIControlEventTouchDown];
         [self addSubview:backgroundBottomButton];
         
         backgroundImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"PlaySongViewBackground"]];

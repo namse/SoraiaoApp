@@ -186,19 +186,26 @@ HsvColor RgbToHsv(Color rgbColor)
 {
     isPickingOn = NO;
     
-    [transColorView setBackgroundColor:[UIColor colorWithRed:color.r/255.f green:color.g/255.f blue:color.b/255.f alpha:1.f]];
     transColorView.transform = CGAffineTransformIdentity;
-    [transColorView setFrame:CGRectMake(pickerView.centerPoint.x, pickerView.centerPoint.y, 1.f, 1.f)];
+    [transColorView setFrame:CGRectMake(pickerView.centerPoint.x, pickerView.centerPoint.y, 2.f, 2.f)];
+    [transColorView setBackgroundColor:[UIColor colorWithRed:color.r/255.f green:color.g/255.f blue:color.b/255.f alpha:1.f]];
+    transColorView.layer.cornerRadius = 1.f;
+    transColorView.center = CGPointMake(pickerView.centerPoint.x, pickerView.centerPoint.y);
+//    [transColorView setFrame:CGRectMake(pickerView.centerPoint.x, pickerView.centerPoint.y, 1.f, 1.f)];
     [transColorView setHidden:NO];
     
 
     [self.view setUserInteractionEnabled:NO];
     [UIView animateWithDuration:ANI_DUR animations:^{
+        float radius = sqrt(powf(self.view.frame.size.width/2.f, 2.f) + powf(self.view.frame.size.height/2.f, 2.f));
         transColorView.transform = CGAffineTransformScale(CGAffineTransformTranslate(transColorView.transform,
-                                                              self.view.frame.size.width/2.f - pickerView.centerPoint.x,
-                                                              self.view.frame.size.height/2.f - pickerView.centerPoint.y),
-        self.view.frame.size.width,
-        self.view.frame.size.height);
+                                                                                     self.view.frame.size.width/2.f - pickerView.centerPoint.x,                                                                                                                                                   self.view.frame.size.height/2.f - pickerView.centerPoint.y),
+                                                          radius, radius);
+//        transColorView.transform = CGAffineTransformScale(CGAffineTransformTranslate(transColorView.transform,
+//                                                              self.view.frame.size.width/2.f - pickerView.centerPoint.x,
+//                                                              self.view.frame.size.height/2.f - pickerView.centerPoint.y),
+//        self.view.frame.size.width,
+//        self.view.frame.size.height);
     }completion:^(BOOL){
         [playSongView setHidden:NO];
         [playSongView setAlpha:0.f];
