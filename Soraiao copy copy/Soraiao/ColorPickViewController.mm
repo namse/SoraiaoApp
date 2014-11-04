@@ -218,7 +218,6 @@ HsvColor RgbToHsv(Color rgbColor)
     [transPlayer stop];
     [transPlayer setCurrentTime:0.f];
     [transPlayer play];
-
     [self.view setUserInteractionEnabled:NO];
     [UIView animateWithDuration:ANI_DUR animations:^{
         float radius = sqrt(powf(self.view.frame.size.width/2.f, 2.f) + powf(self.view.frame.size.height/2.f, 2.f));
@@ -232,9 +231,9 @@ HsvColor RgbToHsv(Color rgbColor)
 //        self.view.frame.size.height);
     }completion:^(BOOL){
         [playSongView setHidden:NO];
-        [playSongView setAlpha:0.f];
+        [playSongView setBackgroundColor:[UIColor colorWithRed:1.f green:1.f blue:1.f alpha:0.f]];
         [UIView animateWithDuration:ALP_DUR animations:^{
-            playSongView.alpha = 1.f;
+            [playSongView setBackgroundColor:[UIColor colorWithRed:color.r/255.f green:color.g/255.f blue:color.b/255.f alpha:1.f]];
         }completion:^(BOOL){
             [self.view setUserInteractionEnabled:YES];
             [playSongView setUserInteractionEnabled:YES];
