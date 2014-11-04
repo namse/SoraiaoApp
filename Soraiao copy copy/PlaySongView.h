@@ -30,10 +30,10 @@
     bool isPlaying;
 }
 enum SongType{
-    BREAKER,
-    HARERUYA,
-    INTHERAIN,
-    LOOP,
+    BREAKER = 1,
+    HARERUYA = 2,
+    INTHERAIN = 3,
+    LOOP =4,
 };
 
 @property (nonatomic) AVAudioPlayer *player_Breaker;

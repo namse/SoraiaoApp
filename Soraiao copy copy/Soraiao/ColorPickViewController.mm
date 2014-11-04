@@ -91,6 +91,12 @@ HsvColor RgbToHsv(Color rgbColor)
         [playSongView setUserInteractionEnabled:NO];
         isPickingOn = YES;
         
+        NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                                 target:self
+                                                         selector:@selector(tick:)
+                                               userInfo:nil
+                                                repeats:YES];
+        
     }
 }
 
@@ -110,37 +116,52 @@ HsvColor RgbToHsv(Color rgbColor)
            && hsv.s >= 0.5f
            && hsv.v >= 0.5f)
         {
-            [playSongView loadSong:BREAKER];
-            
-            [self transToPlaySongWithColor:color];
+            [self transPickState:PS_BREAKER];
         }
         else if(hsv.h > 185.f && hsv.h <= 205
                 && hsv.s >= 0.5f
                 && hsv.v >= 0.5f)
         {
-            [playSongView loadSong:HARERUYA];
-            
-            [self transToPlaySongWithColor:color];
-            
+            [self transPickState:PS_HARERUYA];
         }
         else if(hsv.h > 205.f && hsv.h <= 225.f
                 && hsv.s >= 0.5f
                 && hsv.v >= 0.5f)
         {
-            [playSongView loadSong:INTHERAIN];
-            
-            [self transToPlaySongWithColor:color];
+            [self transPickState:PS_INTHERAIN];
         }
         else if(hsv.h > 225.f && hsv.h <= 265
                 && hsv.s >= 0.5f
                 && hsv.v >= 0.5f)
         {
-            [playSongView loadSong:LOOP];
-            
-            [self transToPlaySongWithColor:color];
+            [self transPickState:PS_LOOP];
         }
     }
     
+}
+-(void)tick:(NSTimer*)timer
+{
+    if(pickState != PS_NONE && isPickingOn == YES)
+    {
+        pickedTimeCount += [timer timeInterval];
+        
+        if(pickedTimeCount >= PICK_MAX_TIME)
+        {
+            SongType type = (SongType)pickState;
+            [playSongView loadSong:type];
+            [self transToPlaySongWithColor:lastColor];
+            pickedTimeCount = 0;
+        }
+    }
+}
+-(void)transPickState:(PickState)state
+{
+    if(state != pickState)
+    {
+        pickedTimeCount = 0;
+    }
+    
+    state = pickState;
 }
 -(void)transToPlaySong
 {
