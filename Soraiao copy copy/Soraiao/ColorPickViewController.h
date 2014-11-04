@@ -34,6 +34,8 @@
     float pickedTimeCount;
     
     struct Color lastColor;
+    
+    AVAudioPlayer *transPlayer;
 }
 -(void)tick:(NSTimer*)timer;
 -(void)transPickState:(enum PickState)state;

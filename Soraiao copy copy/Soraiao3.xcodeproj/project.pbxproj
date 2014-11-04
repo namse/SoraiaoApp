@@ -27,6 +27,7 @@
 		5F50A64319EFA087002E6BF4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A64219EFA087002E6BF4 /* XCTest.framework */; };
 		5F50A64419EFA087002E6BF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62319EFA087002E6BF4 /* Foundation.framework */; };
 		5F50A64519EFA087002E6BF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62719EFA087002E6BF4 /* UIKit.framework */; };
+		5FD839E81A08CEBF00924A73 /* decision3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5FD839E71A08CEBF00924A73 /* decision3.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		5F50A63B19EFA087002E6BF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F50A64119EFA087002E6BF4 /* Soraiao3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Soraiao3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F50A64219EFA087002E6BF4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5FD839E71A08CEBF00924A73 /* decision3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = decision3.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		5F42188E19EFDB8F003C654B /* mp3 */ = {
 			isa = PBXGroup;
 			children = (
+				5FD839E71A08CEBF00924A73 /* decision3.mp3 */,
 				5F42189719EFF493003C654B /* breaker.mp3 */,
 				5F42189819EFF493003C654B /* hareruya.mp3 */,
 				5F42189919EFF493003C654B /* intherain.mp3 */,
@@ -250,6 +253,7 @@
 				5F42189D19EFF493003C654B /* intherain.mp3 in Resources */,
 				5F42189B19EFF493003C654B /* breaker.mp3 in Resources */,
 				5F42189E19EFF493003C654B /* loop.mp3 in Resources */,
+				5FD839E81A08CEBF00924A73 /* decision3.mp3 in Resources */,
 				5F50A62E19EFA087002E6BF4 /* InfoPlist.strings in Resources */,
 				5F50A63719EFA087002E6BF4 /* Main.storyboard in Resources */,
 				5F42189C19EFF493003C654B /* hareruya.mp3 in Resources */,

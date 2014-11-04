@@ -96,7 +96,8 @@ HsvColor RgbToHsv(Color rgbColor)
                                                          selector:@selector(tick:)
                                                userInfo:nil
                                                 repeats:YES];
-        
+        transPlayer = [[AVAudioPlayer alloc]initWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"decision3" ofType:@"mp3"]] error:nil];
+
     }
 }
 
@@ -214,7 +215,9 @@ HsvColor RgbToHsv(Color rgbColor)
     transColorView.center = CGPointMake(pickerView.centerPoint.x, pickerView.centerPoint.y);
 //    [transColorView setFrame:CGRectMake(pickerView.centerPoint.x, pickerView.centerPoint.y, 1.f, 1.f)];
     [transColorView setHidden:NO];
-    
+    [transPlayer stop];
+    [transPlayer setCurrentTime:0.f];
+    [transPlayer play];
 
     [self.view setUserInteractionEnabled:NO];
     [UIView animateWithDuration:ANI_DUR animations:^{
