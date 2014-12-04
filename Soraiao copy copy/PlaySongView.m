@@ -134,19 +134,19 @@
     switch (songType) {
         case BREAKER:
             nowPlayer = player_Breaker;
-            [songTitleView setImage:[UIImage imageNamed:@"SongTitleBreaker"]];
+            [songTitleView setImage:[[UIImage imageNamed:@"SongTitleBreaker"] imageWithColor:[UIColor whiteColor]]];
             break;
         case HARERUYA:
             nowPlayer = player_Hareruya;
-            [songTitleView setImage:[UIImage imageNamed:@"SongTitleHareruya"]];
+            [songTitleView setImage:[[UIImage imageNamed:@"SongTitleHareruya"] imageWithColor:[UIColor whiteColor]]];
             break;
         case INTHERAIN:
             nowPlayer = player_InTheRain;
-            [songTitleView setImage:[UIImage imageNamed:@"SongTitleIntherain"]];
+            [songTitleView setImage:[[UIImage imageNamed:@"SongTitleIntherain"] imageWithColor:[UIColor whiteColor]]];
             break;
         case LOOP:
             nowPlayer = player_Loop;
-            [songTitleView setImage:[UIImage imageNamed:@"SongTitleLoop"]];
+            [songTitleView setImage:[[UIImage imageNamed:@"SongTitleLoop"] imageWithColor:[UIColor whiteColor]]];
             break;
             
         default:

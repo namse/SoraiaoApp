@@ -33,7 +33,7 @@ enum SongType{
     BREAKER = 1,
     HARERUYA = 2,
     INTHERAIN = 3,
-    LOOP =4,
+    LOOP = 4,
 };
 
 @property (nonatomic) AVAudioPlayer *player_Breaker;
