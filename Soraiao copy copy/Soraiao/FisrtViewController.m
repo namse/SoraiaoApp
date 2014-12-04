@@ -28,9 +28,15 @@
 
         CGPoint centerPoint = CGPointMake(screenRect.size.width / 2.f ,
                                   (screenRect.size.height + [UIImage imageNamed:@"PickerViewBackgroundTop"].size.height - [UIImage imageNamed:@"PickerViewBackgroundBottom"].size.height) / 2.f);
+        UIImage* aImage = [UIImage imageNamed:@"FirstViewA"];
+        UIImageView* aImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0.f,
+                                                                              centerPoint.y - aImage.size.height/2.f, //170.f,
+                                                                              aImage.size.width, aImage.size.height)];
+        [aImageView setImage:aImage];
+        [self.view addSubview:aImageView];
         
         UIImage *startButtonImage = [UIImage imageNamed:@"FirstViewStartButton"];
-        startButton = [[UIButton alloc]initWithFrame:CGRectMake(0.f,
+        startButton = [[UIButton alloc]initWithFrame:CGRectMake(centerPoint.x - startButtonImage.size.width/2.f,
                                                                 centerPoint.y - startButtonImage.size.height/2.f, //170.f,
                                                                 startButtonImage.size.width, startButtonImage.size.height)];
         [startButton setImage:startButtonImage forState:UIControlStateNormal];
@@ -44,7 +50,7 @@
         
         
         pickerViewController = [[ColorPickViewController alloc]init];
-        pickerViewController.modalPresentationStyle = UIModalTransitionStyleCrossDissolve;
+        pickerViewController.modalPresentationStyle = UIModalPresentationNone;
         pickerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         
     }

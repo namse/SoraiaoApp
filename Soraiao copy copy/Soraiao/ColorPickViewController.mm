@@ -7,6 +7,7 @@
 //
 
 #import "ColorPickViewController.h"
+#import "list"
 struct HsvColor{
     double h;       // angle in degrees
     double s;       // percent
@@ -63,6 +64,32 @@ HsvColor RgbToHsv(Color rgbColor)
     return out;
 }
 @interface ColorPickViewController ()
+{
+    ColorPickView *pickerView;
+    
+    PlaySongView* playSongView;
+    
+    UIView* transColorView;
+    
+    bool isPickingOn;
+    
+    PickState pickState;
+    
+    
+    struct Color lastColor;
+    struct Color lastPickColor;
+    
+    AVAudioPlayer *transPlayer;
+    
+    double lastTime;
+    double accTime;
+    struct ColorWithTime{
+        enum PickState state;
+        double time;
+        struct Color color;
+    };
+    std::list<ColorWithTime> queue;
+}
 
 @end
 
@@ -75,7 +102,7 @@ HsvColor RgbToHsv(Color rgbColor)
     {
         
         CGRect screenRect = [[UIScreen mainScreen] bounds];
-
+        
         pickerView = [[ColorPickView alloc]initWithFrame:screenRect parent:self];
         [self.view addSubview:pickerView];
         [self.view sendSubviewToBack:pickerView];
@@ -91,13 +118,13 @@ HsvColor RgbToHsv(Color rgbColor)
         [playSongView setUserInteractionEnabled:NO];
         isPickingOn = YES;
         
-        NSTimer * timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
-                                                 target:self
-                                                         selector:@selector(tick:)
-                                               userInfo:nil
-                                                repeats:YES];
         transPlayer = [[AVAudioPlayer alloc]initWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"decision3" ofType:@"mp3"]] error:nil];
-
+        
+        lastTime = [[NSDate date]timeIntervalSinceReferenceDate];
+        
+        
+        [self.view.subviews makeObjectsPerformSelector:@selector(setNeedsDisplay)];
+        [self.view setNeedsDisplay];
     }
 }
 
@@ -110,9 +137,9 @@ HsvColor RgbToHsv(Color rgbColor)
     if(isPickingOn)
     {
         struct Color color = pickerView.CenterColor;
-        
+        lastColor = color;
         HsvColor hsv = RgbToHsv(color);
-        NSLog(@"%3f, %3f, %3f",hsv.h, hsv.s, hsv.v);
+        //NSLog(@"%3f, %3f, %3f",hsv.h, hsv.s, hsv.v);
         if(hsv.h > 165.f && hsv.h <= 185
            && hsv.s >= 0.5f
            && hsv.v >= 0.5f)
@@ -137,32 +164,90 @@ HsvColor RgbToHsv(Color rgbColor)
         {
             [self transPickState:PS_LOOP];
         }
+        else
+        {
+            [self transPickState:PS_NONE];
+        }
+        
+        //        double dt = [[NSDate date]timeIntervalSinceReferenceDate] - lastTime;
+        //
+        //        NSLog(@"[%d] : %f",pickState,accTime);
+        //        accTime += dt;
+        //
+        //        if(pickState != PS_NONE && accTime >= PICK_MAX_TIME)
+        //        {
+        //            SongType type = (SongType)pickState;
+        //            [playSongView loadSong:type];
+        //            [self transToPlaySongWithColor:lastColor];
+        //            accTime = 0;
+        //        }
+        //
+        //
+        //        lastTime = [[NSDate date]timeIntervalSinceReferenceDate];
+        
+        ColorWithTime nowData;
+        
+        nowData.time = [[NSDate date]timeIntervalSinceReferenceDate];
+        nowData.state = pickState;
+        nowData.color = lastColor;
+        
+        queue.push_back(nowData);
+        
+        auto nowTime = nowData.time;
+        while(queue.size() > 0)
+        {
+            auto front = queue.front();
+            
+            auto dt = nowTime - front.time;
+            if(dt > QUEUE_MAX_DELTA_TIME)
+                queue.pop_front();
+            else
+                break;
+        }
+        
+        bool isFirst = true;
+        auto prevData = queue.front();
+        double pickTime = 0;
+        for( auto data : queue )
+        {
+            if(isFirst == true)
+            {
+                isFirst = false;
+                continue;
+            }
+            auto dt = data.time - prevData.time;
+            if( prevData.state != PS_NONE )
+                pickTime += dt;
+            prevData = data;
+        }
+        NSLog(@"[%d] %f",queue.size(), pickTime);
+        
+        if(pickTime > PICK_MAX_TIME)
+        {
+            if(pickState != PS_NONE)
+            {
+                SongType type = (SongType)pickState;
+                [playSongView loadSong:type];
+                [self transToPlaySongWithColor:lastColor];
+                accTime = 0;
+            }
+        }
+        
+        if(pickState != PS_NONE)
+            lastPickColor = lastColor;
+        [pickerView setPercentage:pickTime/PICK_MAX_TIME Color:lastPickColor];
+        
     }
     
-}
--(void)tick:(NSTimer*)timer
-{
-    if(pickState != PS_NONE && isPickingOn == YES)
-    {
-        pickedTimeCount += [timer timeInterval];
-        
-        if(pickedTimeCount >= PICK_MAX_TIME)
-        {
-            SongType type = (SongType)pickState;
-            [playSongView loadSong:type];
-            [self transToPlaySongWithColor:lastColor];
-            pickedTimeCount = 0;
-        }
-    }
 }
 -(void)transPickState:(PickState)state
 {
-    if(state != pickState)
+    if(state != pickState && pickState == PS_NONE)
     {
-        pickedTimeCount = 0;
+        accTime = 0;
     }
     
-    state = pickState;
+    pickState = state;
 }
 -(void)transToPlaySong
 {
@@ -213,7 +298,9 @@ HsvColor RgbToHsv(Color rgbColor)
     [transColorView setBackgroundColor:[UIColor colorWithRed:color.r/255.f green:color.g/255.f blue:color.b/255.f alpha:1.f]];
     transColorView.layer.cornerRadius = 1.f;
     transColorView.center = CGPointMake(pickerView.centerPoint.x, pickerView.centerPoint.y);
-//    [transColorView setFrame:CGRectMake(pickerView.centerPoint.x, pickerView.centerPoint.y, 1.f, 1.f)];
+    //    [transColorView setFrame:CGRectMake(pickerView.centerPoint.x, pickerView.centerPoint.y, 1.f, 1.f)];
+    [playSongView setBackgroundColor:[UIColor colorWithRed:color.r/255.f green:color.g/255.f blue:color.b/255.f alpha:1.f]];
+    [playSongView.layer setBackgroundColor:[UIColor colorWithRed:color.r/255.f green:color.g/255.f blue:color.b/255.f alpha:1.f].CGColor];
     [transColorView setHidden:NO];
     [transPlayer stop];
     [transPlayer setCurrentTime:0.f];
@@ -224,16 +311,16 @@ HsvColor RgbToHsv(Color rgbColor)
         transColorView.transform = CGAffineTransformScale(CGAffineTransformTranslate(transColorView.transform,
                                                                                      self.view.frame.size.width/2.f - pickerView.centerPoint.x,                                                                                                                                                   self.view.frame.size.height/2.f - pickerView.centerPoint.y),
                                                           radius, radius);
-//        transColorView.transform = CGAffineTransformScale(CGAffineTransformTranslate(transColorView.transform,
-//                                                              self.view.frame.size.width/2.f - pickerView.centerPoint.x,
-//                                                              self.view.frame.size.height/2.f - pickerView.centerPoint.y),
-//        self.view.frame.size.width,
-//        self.view.frame.size.height);
+        //        transColorView.transform = CGAffineTransformScale(CGAffineTransformTranslate(transColorView.transform,
+        //                                                              self.view.frame.size.width/2.f - pickerView.centerPoint.x,
+        //                                                              self.view.frame.size.height/2.f - pickerView.centerPoint.y),
+        //        self.view.frame.size.width,
+        //        self.view.frame.size.height);
     }completion:^(BOOL){
         [playSongView setHidden:NO];
-        [playSongView setBackgroundColor:[UIColor colorWithRed:1.f green:1.f blue:1.f alpha:0.f]];
+        [playSongView setAlpha:0.f];
         [UIView animateWithDuration:ALP_DUR animations:^{
-            [playSongView setBackgroundColor:[UIColor colorWithRed:color.r/255.f green:color.g/255.f blue:color.b/255.f alpha:1.f]];
+            [playSongView setAlpha:1.f];
         }completion:^(BOOL){
             [self.view setUserInteractionEnabled:YES];
             [playSongView setUserInteractionEnabled:YES];
@@ -241,15 +328,16 @@ HsvColor RgbToHsv(Color rgbColor)
         }];
     }];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

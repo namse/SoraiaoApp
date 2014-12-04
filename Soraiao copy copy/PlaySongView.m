@@ -8,6 +8,27 @@
 
 #import "PlaySongView.h"
 #import "ColorPickViewController.h"
+@interface UIImage(Overlay)
+@end
+
+@implementation UIImage(Overlay)
+
+- (UIImage *)imageWithColor:(UIColor *)color1
+{
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, self.scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, 0, self.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    CGContextClipToMask(context, rect, self.CGImage);
+    [color1 setFill];
+    CGContextFillRect(context, rect);
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+@end
 @implementation PlaySongView
 @synthesize player_Breaker;
 @synthesize player_Hareruya;
@@ -53,27 +74,14 @@
         [pickButton addTarget:parent action:@selector(pickButtonPressed) forControlEvents:UIControlEventTouchDown];
         [self addSubview:pickButton];
 
-//        UIImage* home = [UIImage imageNamed:@"home"];
-//        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(frame.size.width - home.size.width - (backgroundTopImageView.frame.size.height - home.size.height)/2.f,
-//                                                               (backgroundTopImageView.frame.size.height - home.size.height)/2.f,
-//                                                               home.size.width, home.size.height)];
-//        [homeButton setImage:home forState:UIControlStateNormal];
-//        [homeButton addTarget:parent action:@selector(homeButtonPressed) forControlEvents:UIControlEventTouchDown];
-//        [self addSubview:homeButton];
-//        
-//        UIImage* pick = [UIImage imageNamed:@"pick"];
-//        pickButton = [[UIButton alloc]initWithFrame:CGRectMake((backgroundTopImageView.frame.size.height - pick.size.height)/2.f,
-//                                                               (backgroundTopImageView.frame.size.height - pick.size.height)/2.f, home.size.width, home.size.height)];
-//        [pickButton setImage:pick forState:UIControlStateNormal];
-//        [pickButton addTarget:parent action:@selector(pickButtonPressed) forControlEvents:UIControlEventTouchDown];
-//        [self addSubview:pickButton];
-        
+/*
         UIImage* back = [UIImage imageNamed:@"back"];
         backButton = [[UIButton alloc]initWithFrame:CGRectMake((backgroundTopImageView.frame.size.height - back.size.height)/2.f,
                                                                (backgroundTopImageView.frame.size.height - back.size.height)/2.f, back.size.width, back.size.height)];
         [backButton setImage:back forState:UIControlStateNormal];
         [backButton addTarget:parent action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchDown];
         [self addSubview:backButton];
+        */
         
         
         UIImage* bottomImage = [UIImage imageNamed:@"PlaySongViewBackgroundBottom"];
@@ -81,13 +89,13 @@
         [backgroundBottomButton setImage:bottomImage forState:UIControlStateNormal];
         [backgroundBottomButton addTarget:self action:@selector(linkButtonPressed) forControlEvents:UIControlEventTouchDown];
         [self addSubview:backgroundBottomButton];
+
         
-        backgroundImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"PlaySongViewBackground"]];
-        [self addSubview:backgroundImageView];
-        [self sendSubviewToBack:backgroundImageView];
         
         
         UIImage* playIcon = [UIImage imageNamed:@"PlaySongViewPlayIcon"];
+        playIcon = [playIcon imageWithColor:[UIColor whiteColor]];
+        
         CGRect newFrame;
         newFrame.origin.x = (frame.size.width - playIcon.size.width) / 2.f;
         newFrame.origin.y = (frame.size.height - playIcon.size.height + backgroundTopImageView.frame.size.height - backgroundBottomButton.frame.size.height) / 2.f;
@@ -117,7 +125,10 @@
     {
         [nowPlayer stop];
         [nowPlayer setCurrentTime:0.f];
-        [playToggleButton setImage:[UIImage imageNamed:@"PlaySongViewPlayIcon"] forState:UIControlStateNormal];
+        UIImage* playIcon = [UIImage imageNamed:@"PlaySongViewPlayIcon"];
+        playIcon = [playIcon imageWithColor:[UIColor whiteColor]];
+        
+        [playToggleButton setImage:playIcon forState:UIControlStateNormal];
         isPlaying = false;
     }
     switch (songType) {
@@ -163,7 +174,11 @@
             [nowPlayer stop];
         }
     }
-    [playToggleButton setImage:[UIImage imageNamed:isPlaying ? @"PlaySongViewStopIcon" : @"PlaySongViewPlayIcon"] forState:UIControlStateNormal];
+    
+    UIImage* playIcon = [UIImage imageNamed:isPlaying ? @"PlaySongViewStopIcon" : @"PlaySongViewPlayIcon"];
+    playIcon = [playIcon imageWithColor:[UIColor whiteColor]];
+    
+    [playToggleButton setImage:playIcon forState:UIControlStateNormal];
 }
 
 -(void)linkButtonPressed

@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "3G:3GS_320x480-08.png"
+      "filename" : "카메라중심_320x480.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "main_640x960-08.png"
+      "filename" : "카메라중심_640x960.png"
     }
   ],
   "info" : {

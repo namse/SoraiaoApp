@@ -12,23 +12,24 @@
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
+#include <dispatch/dispatch.h>
+#include "AimView.h"
 @interface ColorPickView : UIView <AVCaptureVideoDataOutputSampleBufferDelegate>
 {
     UIImageView* backgroundTopImageView;
     //UIImageView* backgroundBottomImageView;
-    UIImageView* centerPickerImageView;
+    AimView* centerPickerImageView;
     UIButton* linkButton;
     UIButton* homeButton;
     UIButton* detailButton;
     
     CGPoint centerPoint;
-    struct Color{
-        int r, g, b;
-    } CenterColor;
+    struct Color CenterColor;
     
     id parentViewController;
 }
 - (id)initWithFrame:(CGRect)frame parent:(id)parent;
+-(void)setPercentage:(double)percent Color:(struct Color)color;
 // Camera
 @property (strong, nonatomic) AVCaptureDevice* device;
 @property (strong, nonatomic) AVCaptureSession* captureSession;

@@ -36,31 +36,12 @@
         [homeButton setImage:home forState:UIControlStateNormal];
         [homeButton addTarget:parent action:@selector(homeButtonPressed) forControlEvents:UIControlEventTouchDown];
         [self addSubview:homeButton];
-
-        
-//        UIImage* home = [UIImage imageNamed:@"home"];
-//        homeButton = [[UIButton alloc]initWithFrame:CGRectMake(screenRect.size.width - home.size.width - (backgroundTopImageView.frame.size.height - home.size.height)/2.f,
-//                                                               (backgroundTopImageView.frame.size.height - home.size.height)/2.f,
-//                                                               home.size.width,
-//                                                               home.size.height)];
-//        [homeButton setImage:home forState:UIControlStateNormal];
-//        [homeButton addTarget:parent action:@selector(homeButtonPressed) forControlEvents:UIControlEventTouchDown];
-//        [self addSubview:homeButton];
-        
-//        UIImage* detail = [UIImage imageNamed:@"detail"];
-//        detailButton = [[UIButton alloc]initWithFrame:CGRectMake(screenRect.size.width - detail.size.width - (backgroundTopImageView.frame.size.height - detail.size.height)/2.f,
-//                                                                 (backgroundTopImageView.frame.size.height - detail.size.height)/2.f,
-//                                                                 detail.size.width,
-//                                                                 detail.size.height)];
-//        [detailButton setImage:detail forState:UIControlStateNormal];
-//        [detailButton addTarget:parent action:@selector(detailButtonPressed) forControlEvents:UIControlEventTouchDown];
-//        [self addSubview:detailButton];
         
         
         
         UIImage *link = [UIImage imageNamed:@"PickerViewBackgroundBottom"];
         linkButton = [[UIButton alloc]initWithFrame:CGRectMake(0.f, screenRect.size.height - link.size.height , link.size.width, link.size.height)];
-        [linkButton addTarget:parent action:@selector(linkButtonPressed) forControlEvents:UIControlEventTouchDown];
+        //[linkButton addTarget:parent action:@selector(linkButtonPressed) forControlEvents:UIControlEventTouchDown];
         [linkButton setImage:link forState:UIControlStateNormal];
         [self addSubview:linkButton];
         
@@ -69,14 +50,23 @@
         centerPoint = CGPointMake(screenRect.size.width / 2.f ,
                                           (screenRect.size.height + backgroundTopImageView.frame.size.height - linkButton.frame.size.height) / 2.f);
         
-        centerPickerImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"PickerCenter"]];
+        centerPickerImageView = [[AimView alloc]initWithImage:[UIImage imageNamed:@"PickerCenter"]];
         CGRect newFrame = centerPickerImageView.frame;
         newFrame.origin = CGPointMake(centerPoint.x - (newFrame.size.width)/ 2.f,
                                       centerPoint.y - (newFrame.size.height)/ 2.f) ;
         [centerPickerImageView setFrame:newFrame];
         [self addSubview:centerPickerImageView];
-                
+        
+        if (centerPickerImageView == nil)
+            NSLog(@"was not allocated and/or initialized");
+        
+        if (centerPickerImageView.superview == nil)
+            NSLog(@"was not added to view");
+        
+        [centerPickerImageView setNeedsDisplay];
+        [self setNeedsDisplay];
         [self setupCamera];
+        
     }
     return self;
 }
@@ -152,6 +142,7 @@
     CenterColor.g = baseAddress[(int)(newCenterPointX) * bytesPerRow + (int)(newCenterPointY) * 4 + 1];
     CenterColor.b = baseAddress[(int)(newCenterPointX) * bytesPerRow + (int)(newCenterPointY) * 4 + 0];
     
+    
     [parentViewController performSelectorOnMainThread:@selector(onColorPicked) withObject:nil waitUntilDone:NO];
     
     
@@ -169,5 +160,11 @@
     CGImageRelease(newImage);
     
     CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+}
+
+
+-(void)setPercentage:(double)percent Color:(struct Color)color
+{
+    [centerPickerImageView setPercentage:percent Color:color];
 }
 @end
