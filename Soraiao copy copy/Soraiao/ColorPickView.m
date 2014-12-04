@@ -20,7 +20,14 @@
         
         CGRect screenRect = [[UIScreen mainScreen] bounds];
         
+        UIView* statusBarBack = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenRect.size.width, 20)];
+        [statusBarBack setBackgroundColor:[UIColor blackColor]];
+        [self addSubview:statusBarBack];
+        
         backgroundTopImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"PickerViewBackgroundTop"]];
+        CGRect frame = backgroundTopImageView.frame;
+        frame.origin.y += 10;
+        [backgroundTopImageView setFrame:frame];
         [self addSubview:backgroundTopImageView];
         
         
@@ -30,7 +37,7 @@
         float homeChnagedHeight = home.size.height * 0.75f;
         
         homeButton = [[UIButton alloc]initWithFrame:CGRectMake(screenRect.size.width - homeChnagedWidth - (backgroundTopImageView.frame.size.height - homeChnagedHeight)/2.f,
-                                                               (backgroundTopImageView.frame.size.height - (home.size.height * 0.5f))/2.f,
+                                                               (backgroundTopImageView.frame.size.height - (home.size.height * 0.5f))/2.f + 10,
                                                                homeChnagedWidth,
                                                                homeChnagedHeight)];
         [homeButton setImage:home forState:UIControlStateNormal];
@@ -40,9 +47,8 @@
         
         
         UIImage *link = [UIImage imageNamed:@"PickerViewBackgroundBottom"];
-        linkButton = [[UIButton alloc]initWithFrame:CGRectMake(0.f, screenRect.size.height - link.size.height , link.size.width, link.size.height)];
-        //[linkButton addTarget:parent action:@selector(linkButtonPressed) forControlEvents:UIControlEventTouchDown];
-        [linkButton setImage:link forState:UIControlStateNormal];
+        linkButton = [[UIImageView alloc]initWithFrame:CGRectMake(0.f, screenRect.size.height - link.size.height , link.size.width, link.size.height)];
+        [linkButton setImage:link];
         [self addSubview:linkButton];
         
         
@@ -66,6 +72,8 @@
         [centerPickerImageView setNeedsDisplay];
         [self setNeedsDisplay];
         [self setupCamera];
+        
+        [self bringSubviewToFront:statusBarBack];
         
     }
     return self;

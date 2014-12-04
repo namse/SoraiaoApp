@@ -20,6 +20,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
         backgroundImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"FirstViewBackground"]];
         [self.view addSubview:backgroundImageView];
 

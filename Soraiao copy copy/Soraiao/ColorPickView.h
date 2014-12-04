@@ -19,7 +19,7 @@
     UIImageView* backgroundTopImageView;
     //UIImageView* backgroundBottomImageView;
     AimView* centerPickerImageView;
-    UIButton* linkButton;
+    UIImageView* linkButton;
     UIButton* homeButton;
     UIButton* detailButton;
     

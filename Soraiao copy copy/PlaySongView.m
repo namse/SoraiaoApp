@@ -39,6 +39,13 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        CGRect newFrame;
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        
+        UIView* statusBarBack = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenRect.size.width, 20)];
+        [statusBarBack setBackgroundColor:[UIColor blackColor]];
+        [self addSubview:statusBarBack];
+        
         // Initialization code
         player_Breaker = [[AVAudioPlayer alloc]initWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"breaker" ofType:@"mp3"]] error:nil];
         player_Hareruya = [[AVAudioPlayer alloc]initWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"hareruya" ofType:@"mp3"]] error:nil];
@@ -48,6 +55,9 @@
         
         
         backgroundTopImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"PlaySongViewBackgroundTop"]];
+        newFrame= backgroundTopImageView.frame;
+        newFrame.origin.y += 10;
+        [backgroundTopImageView setFrame:newFrame];
         [self addSubview:backgroundTopImageView];
         
         UIImage* home = [UIImage imageNamed:@"home"];
@@ -56,7 +66,7 @@
         float homeChnagedHeight = home.size.height * 0.75f;
         
         homeButton = [[UIButton alloc]initWithFrame:CGRectMake(self.frame.size.width - homeChnagedWidth - (backgroundTopImageView.frame.size.height - homeChnagedHeight)/2.f,
-                                                               (backgroundTopImageView.frame.size.height - (home.size.height * 0.5f))/2.f,
+                                                               (backgroundTopImageView.frame.size.height - (home.size.height * 0.5f))/2.f + 10,
                                                                homeChnagedWidth,
                                                                homeChnagedHeight)];
         [homeButton setImage:home forState:UIControlStateNormal];
@@ -67,7 +77,7 @@
         float pickChnagedWidth = pick.size.width * 0.75f;
         float pickChnagedHeight = pick.size.height * 0.75f;
         pickButton = [[UIButton alloc]initWithFrame:CGRectMake((backgroundTopImageView.frame.size.height - pickChnagedHeight)/2.f,
-                                                               (backgroundTopImageView.frame.size.height - pick.size.height * 0.5f)/2.f,
+                                                               (backgroundTopImageView.frame.size.height - pick.size.height * 0.5f)/2.f + 10,
                                                                pickChnagedWidth,
                                                                pickChnagedHeight)];
         [pickButton setImage:pick forState:UIControlStateNormal];
@@ -96,7 +106,6 @@
         UIImage* playIcon = [UIImage imageNamed:@"PlaySongViewPlayIcon"];
         playIcon = [playIcon imageWithColor:[UIColor whiteColor]];
         
-        CGRect newFrame;
         newFrame.origin.x = (frame.size.width - playIcon.size.width) / 2.f;
         newFrame.origin.y = (frame.size.height - playIcon.size.height + backgroundTopImageView.frame.size.height - backgroundBottomButton.frame.size.height) / 2.f;
         newFrame.size = playIcon.size;
@@ -116,6 +125,9 @@
         nowPlayer = nil;
         
         isPlaying = false;
+        
+        [self bringSubviewToFront:statusBarBack];
+        
     }
     return self;
 }

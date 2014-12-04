@@ -45,20 +45,7 @@
     CGPoint center = CGPointMake(self.frame.size.width/2.f, self.frame.size.height/2.f);
     
     
-    if(aimPercentage >= 1)
-    {
-        [UIView animateWithDuration:ANI_DUR animations:^{
-            float radius = 10.f;
-            self.transform = CGAffineTransformScale(self.transform,radius, radius);
-            //        transColorView.transform = CGAffineTransformScale(CGAffineTransformTranslate(transColorView.transform,
-            //                                                              self.view.frame.size.width/2.f - pickerView.centerPoint.x,
-            //                                                              self.view.frame.size.height/2.f - pickerView.centerPoint.y),
-            //        self.view.frame.size.width,
-            //        self.view.frame.size.height);
-        }completion:^(BOOL a){
-            self.transform = CGAffineTransformIdentity;
-        }];
-    }
+    
     [[UIColor clearColor] setFill];
     
         CGContextFillRect(context, bounds);
@@ -105,7 +92,20 @@
             [[UIColor blackColor] setFill];
             [centerPath fill];
             
-            
+            if(aimPercentage >= 1)
+            {
+                [UIView animateWithDuration:ANI_DUR animations:^{
+                    float radius = 10.f;
+                    self.transform = CGAffineTransformScale(self.transform,radius, radius);
+                    //        transColorView.transform = CGAffineTransformScale(CGAffineTransformTranslate(transColorView.transform,
+                    //                                                              self.view.frame.size.width/2.f - pickerView.centerPoint.x,
+                    //                                                              self.view.frame.size.height/2.f - pickerView.centerPoint.y),
+                    //        self.view.frame.size.width,
+                    //        self.view.frame.size.height);
+                }completion:^(BOOL a){
+                    self.transform = CGAffineTransformIdentity;
+                }];
+            }
         }
         else
         {
