@@ -319,11 +319,11 @@ HsvColor RgbToHsv(Color rgbColor)
     }completion:^(BOOL){
         [playSongView setHidden:NO];
         [playSongView setAlpha:0.f];
+        [playSongView setUserInteractionEnabled:YES];
+        [self.view setUserInteractionEnabled:YES];
         [UIView animateWithDuration:ALP_DUR animations:^{
             [playSongView setAlpha:1.f];
         }completion:^(BOOL){
-            [self.view setUserInteractionEnabled:YES];
-            [playSongView setUserInteractionEnabled:YES];
             [transColorView setHidden:YES];
         }];
     }];

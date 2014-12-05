@@ -51,7 +51,7 @@
         
         
         pickerViewController = [[ColorPickViewController alloc]init];
-        pickerViewController.modalPresentationStyle = UIModalPresentationNone;
+        //pickerViewController.modalPresentationStyle = UIModalPresentationNone;
         pickerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         
     }

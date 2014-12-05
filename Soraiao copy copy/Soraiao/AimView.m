@@ -94,6 +94,7 @@
             
             if(aimPercentage >= 1)
             {
+                self.transform = CGAffineTransformIdentity;
                 [UIView animateWithDuration:ANI_DUR animations:^{
                     float radius = 10.f;
                     self.transform = CGAffineTransformScale(self.transform,radius, radius);
