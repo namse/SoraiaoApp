@@ -14,6 +14,10 @@
 
 @implementation FirstViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.screenName = @"Home Screen";
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

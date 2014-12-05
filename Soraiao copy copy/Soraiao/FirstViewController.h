@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ColorPickViewController.h"
-@interface FirstViewController : UIViewController
+#import "GAITrackedViewController.h"
+@interface FirstViewController : GAITrackedViewController
 {
     UIImageView* backgroundImageView;
     UIButton* startButton;

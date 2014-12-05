@@ -27,6 +27,11 @@
 		5F50A64319EFA087002E6BF4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A64219EFA087002E6BF4 /* XCTest.framework */; };
 		5F50A64419EFA087002E6BF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62319EFA087002E6BF4 /* Foundation.framework */; };
 		5F50A64519EFA087002E6BF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50A62719EFA087002E6BF4 /* UIKit.framework */; };
+		5F50CA541A3152E500AB6E38 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50CA531A3152E500AB6E38 /* CoreData.framework */; };
+		5F50CA561A3152EE00AB6E38 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50CA551A3152EE00AB6E38 /* SystemConfiguration.framework */; };
+		5F50CA581A3152F500AB6E38 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50CA571A3152F400AB6E38 /* libz.dylib */; };
+		5F50CA5A1A31593100AB6E38 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50CA591A31593100AB6E38 /* AdSupport.framework */; };
+		5F50CA5C1A31596E00AB6E38 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F50CA5B1A31596E00AB6E38 /* libGoogleAnalyticsServices.a */; };
 		5F74F9AF1A1381380078B4FB /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F74F9AE1A1381380078B4FB /* libstdc++.6.0.9.dylib */; };
 		5F74F9B11A1385FE0078B4FB /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F74F9B01A1385FE0078B4FB /* libstdc++.dylib */; };
 		5F74F9B41A1391B80078B4FB /* AimView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F74F9B31A1391B80078B4FB /* AimView.m */; };
@@ -71,6 +76,20 @@
 		5F50A63B19EFA087002E6BF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F50A64119EFA087002E6BF4 /* Soraiao3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Soraiao3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F50A64219EFA087002E6BF4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5F50CA4A1A3152B900AB6E38 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		5F50CA4B1A3152B900AB6E38 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		5F50CA4C1A3152B900AB6E38 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		5F50CA4D1A3152B900AB6E38 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		5F50CA4E1A3152B900AB6E38 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		5F50CA4F1A3152B900AB6E38 /* GAILogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		5F50CA501A3152B900AB6E38 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		5F50CA511A3152B900AB6E38 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		5F50CA521A3152C800AB6E38 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		5F50CA531A3152E500AB6E38 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5F50CA551A3152EE00AB6E38 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5F50CA571A3152F400AB6E38 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5F50CA591A31593100AB6E38 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		5F50CA5B1A31596E00AB6E38 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		5F74F9AE1A1381380078B4FB /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		5F74F9B01A1385FE0078B4FB /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		5F74F9B21A1391B80078B4FB /* AimView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AimView.h; sourceTree = "<group>"; };
@@ -83,10 +102,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F50CA5A1A31593100AB6E38 /* AdSupport.framework in Frameworks */,
+				5F50CA581A3152F500AB6E38 /* libz.dylib in Frameworks */,
+				5F50CA561A3152EE00AB6E38 /* SystemConfiguration.framework in Frameworks */,
+				5F50CA541A3152E500AB6E38 /* CoreData.framework in Frameworks */,
 				5F74F9B11A1385FE0078B4FB /* libstdc++.dylib in Frameworks */,
 				5F74F9AF1A1381380078B4FB /* libstdc++.6.0.9.dylib in Frameworks */,
 				5F42188D19EFDB85003C654B /* AVFoundation.framework in Frameworks */,
 				5F50A62619EFA087002E6BF4 /* CoreGraphics.framework in Frameworks */,
+				5F50CA5C1A31596E00AB6E38 /* libGoogleAnalyticsServices.a in Frameworks */,
 				5F50A62819EFA087002E6BF4 /* UIKit.framework in Frameworks */,
 				5F50A62419EFA087002E6BF4 /* Foundation.framework in Frameworks */,
 			);
@@ -138,6 +162,10 @@
 		5F50A62219EFA087002E6BF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F50CA591A31593100AB6E38 /* AdSupport.framework */,
+				5F50CA571A3152F400AB6E38 /* libz.dylib */,
+				5F50CA551A3152EE00AB6E38 /* SystemConfiguration.framework */,
+				5F50CA531A3152E500AB6E38 /* CoreData.framework */,
 				5F74F9B01A1385FE0078B4FB /* libstdc++.dylib */,
 				5F74F9AE1A1381380078B4FB /* libstdc++.6.0.9.dylib */,
 				5F42188C19EFDB85003C654B /* AVFoundation.framework */,
@@ -152,6 +180,7 @@
 		5F50A62919EFA087002E6BF4 /* Soraiao */ = {
 			isa = PBXGroup;
 			children = (
+				5F50CA491A31527700AB6E38 /* Analytics */,
 				5F42188E19EFDB8F003C654B /* mp3 */,
 				5F50A63219EFA087002E6BF4 /* AppDelegate.h */,
 				5F50A63319EFA087002E6BF4 /* AppDelegate.m */,
@@ -181,6 +210,23 @@
 				5F50A63119EFA087002E6BF4 /* Soraiao3-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F50CA491A31527700AB6E38 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				5F50CA5B1A31596E00AB6E38 /* libGoogleAnalyticsServices.a */,
+				5F50CA521A3152C800AB6E38 /* GAIFields.h */,
+				5F50CA4A1A3152B900AB6E38 /* GAI.h */,
+				5F50CA4B1A3152B900AB6E38 /* GAIDictionaryBuilder.h */,
+				5F50CA4C1A3152B900AB6E38 /* GAIEcommerceProduct.h */,
+				5F50CA4D1A3152B900AB6E38 /* GAIEcommerceProductAction.h */,
+				5F50CA4E1A3152B900AB6E38 /* GAIEcommercePromotion.h */,
+				5F50CA4F1A3152B900AB6E38 /* GAILogger.h */,
+				5F50CA501A3152B900AB6E38 /* GAITrackedViewController.h */,
+				5F50CA511A3152B900AB6E38 /* GAITracker.h */,
+			);
+			name = Analytics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +461,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Soraiao/Soraiao3-Prefix.pch";
 				INFOPLIST_FILE = "Soraiao/Soraiao3-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Soraiao",
+				);
 				PRODUCT_NAME = Soraiao3;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -432,6 +482,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Soraiao/Soraiao3-Prefix.pch";
 				INFOPLIST_FILE = "Soraiao/Soraiao3-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Soraiao",
+				);
 				PRODUCT_NAME = Soraiao3;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

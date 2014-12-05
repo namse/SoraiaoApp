@@ -230,6 +230,13 @@ HsvColor RgbToHsv(Color rgbColor)
                 [playSongView loadSong:type];
                 [self transToPlaySongWithColor:lastColor];
                 accTime = 0;
+                
+                id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+                
+                [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"action"     // Event category (required)
+                                                                      action:@"TransToPlay"  // Event action (required)
+                                                                       label:nil          // Event label
+                                                                       value:[NSNumber numberWithInt:(int)type]] build]];    // Event value
             }
         }
         
@@ -259,6 +266,7 @@ HsvColor RgbToHsv(Color rgbColor)
 -(void)homeButtonPressed
 {
     [playSongView stopSong];
+    isPickingOn = YES;
     [self dismissViewControllerAnimated:YES completion:^{
         [playSongView setHidden:YES];
         [playSongView setUserInteractionEnabled:NO];
@@ -288,9 +296,15 @@ HsvColor RgbToHsv(Color rgbColor)
     [pickerView setHidden:NO];
     isPickingOn = YES;
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.screenName = @"MeasureAndPlay Screen";
+}
 -(void)transToPlaySongWithColor:(struct Color)color
 {
+    
+    
+    
     isPickingOn = NO;
     
     transColorView.transform = CGAffineTransformIdentity;

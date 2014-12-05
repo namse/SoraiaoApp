@@ -10,12 +10,15 @@
 #import "PlaySongView.h"
 #import "ColorPickView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "GAITrackedViewController.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAI.h"
 #define ANI_DUR 3.f
 #define ALP_DUR 3.f
 #define PICK_MAX_TIME 1.0f
 #define QUEUE_MAX_DELTA_TIME 3.f
 
-@interface ColorPickViewController : UIViewController
+@interface ColorPickViewController : GAITrackedViewController
 enum PickState{
     PS_BREAKER = 1,
     PS_HARERUYA = 2,
