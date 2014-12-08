@@ -15,6 +15,10 @@
       "filename" : "플레이하단_640x1136.png",
       "subtype" : "retina4",
       "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "3x"
     }
   ],
   "info" : {
