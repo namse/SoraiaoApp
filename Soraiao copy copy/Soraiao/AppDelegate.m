@@ -24,6 +24,13 @@
     // Initialize tracker. Replace with your tracking ID.
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-57387310-1"];
     
+    // Assumes a tracker has already been initialized with a property ID, otherwise
+    // getDefaultTracker returns nil.
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    // Enable Advertising Features.
+    tracker.allowIDFACollection = YES;
+    
     return YES;
 }
 - (void)applicationWillResignActive:(UIApplication *)application
